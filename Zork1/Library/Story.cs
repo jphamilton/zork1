@@ -1,25 +1,25 @@
-﻿using Zork1.Library.Parsing;
-
-namespace Zork1.Library;
+﻿namespace Zork1.Library;
 
 public abstract class Story
 {
+    private readonly SyntaxBase _syntax;
+
     public string Name { get; set; }
     public string Title { get; set; }
 
     protected abstract void Start();
 
-    static Story()
+    public Story(SyntaxBase syntax)
     {
-        AppDomain.CurrentDomain.ProcessExit += (s, e) => Output.StopScripting();
+        _syntax = syntax;
     }
 
     public void Initialize()
     {
         Dictionary.Load();
 
-        Syntax.Load<ZorkSyntax>();
-        
+        _syntax.Load();
+
         Routines.Load();
 
         Objects.Load();

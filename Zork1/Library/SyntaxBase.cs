@@ -1,4 +1,6 @@
-﻿namespace Zork1.Library.Parsing;
+﻿using Zork1.Library.Parsing;
+
+namespace Zork1.Library;
 
 public abstract class SyntaxBase
 {

@@ -1,4 +1,5 @@
-﻿using Zork1.Library.Things;
+﻿using Zork1.Library;
+using Zork1.Library.Things;
 
 namespace Zork1.Handlers;
 
@@ -6,7 +7,7 @@ public class Disembark : Sub
 {
     public override bool Handler(Object noun, Object second)
     {
-        if (Player.Parent != noun)
+        if (player.Parent != noun)
         {
             return Print("You're not in that!");
         }

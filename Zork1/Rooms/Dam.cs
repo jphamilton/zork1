@@ -80,7 +80,7 @@ public class Dam : Room
 
         if (Location == reservoir)
         {
-            if (Player.Parent.Vehicle)
+            if (player.Parent.Vehicle)
             {
                 return Print("The boat lifts gently out of the mud and is now floating on the reservoir.");
             }
@@ -122,7 +122,7 @@ public class Dam : Room
         trunk.Concealed = false;
         Flags.LowTide = true;
 
-        if (Location == reservoir && Player.Parent.Vehicle)
+        if (Location == reservoir && player.Parent.Vehicle)
         {
             return Print("The water level has dropped to the point at which the boat can no longer stay afloat. It sinks into the mud.");
         }

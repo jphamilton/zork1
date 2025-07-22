@@ -50,7 +50,7 @@ public class EntranceToHades : Room
                 return false;
             }
 
-            if (Player.Has(brass_bell) && Player.Has(black_book) && Player.Has(pair_of_candles))
+            if (player.Has(brass_bell) && player.Has(black_book) && player.Has(pair_of_candles))
             {
                 return Print("You must perform the ceremony.");
             }
@@ -73,7 +73,7 @@ public class EntranceToHades : Room
             Print("The bell suddenly becomes red hot and falls to the ground. The wraiths, as if paralyzed, stop their " +
                 "jeering and slowly turn to face you. On their ashen faces, the expression of a long-forgotten terror takes shape.");
 
-            if (Player.Has(pair_of_candles))
+            if (player.Has(pair_of_candles))
             {
                 Print("^In your confusion, the candles drop to the ground (and they are out).");
 
@@ -126,7 +126,7 @@ public class EntranceToHades : Room
                 }
             }
 
-            if (!Flags.ExorcismCandle && Player.Has(pair_of_candles) && pair_of_candles.Light)
+            if (!Flags.ExorcismCandle && player.Has(pair_of_candles) && pair_of_candles.Light)
             {
                 Flags.ExorcismCandle = true;
                 TimeLeft = 3;

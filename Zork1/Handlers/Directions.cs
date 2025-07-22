@@ -4,14 +4,6 @@ using Zork1.Things;
 
 namespace Zork1.Handlers;
 
-public abstract class Direction : Sub
-{
-    public override bool Handler(Object noun, Object second)
-    {
-        return true;
-    }
-}
-
 public class North : Direction;
 
 public class Northeast : Direction;

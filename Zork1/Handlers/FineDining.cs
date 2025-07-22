@@ -1,4 +1,5 @@
-﻿using Zork1.Library.Things;
+﻿using Zork1.Library;
+using Zork1.Library.Things;
 using Zork1.Things;
 
 namespace Zork1.Handlers;
@@ -10,7 +11,7 @@ public abstract class FineDining : Sub
         var canEat = noun.Edible;
         var canDrink = false;
 
-        if (canEat && Player.Has(noun))
+        if (canEat && player.Has(noun))
         {
             if (drink)
             {
@@ -31,7 +32,7 @@ public abstract class FineDining : Sub
                 return QuenchThirst(noun);
             }
 
-            if (!Player.Has(noun.Parent))
+            if (!player.Has(noun.Parent))
             {
                 return Print($"You have to be holding the {noun.Parent} first.");
             }

@@ -69,7 +69,7 @@ public class Purloin : DebugSub
 
         if (obj != null)
         {
-            obj.Move(Player.Instance);
+            obj.Move(player);
             Score.ScoreObject(obj);
             return Print("(Purloined)");
         }
@@ -153,7 +153,7 @@ public class Replay : DebugSub
                     continue;
                 }
 
-                MainLoop.CommandLoop(command, out error);
+                MainLoop.CommandRun(command, out error);
                 
                 if (string.IsNullOrEmpty(fakeOutput.ToString()))
                 {
@@ -226,7 +226,7 @@ public class Replay : DebugSub
         {
             output.AppendLine();
             output.AppendLine($"> {command}");
-            MainLoop.CommandLoop(command, out error);
+            MainLoop.CommandRun(command, out error);
         }
         
     }

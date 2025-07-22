@@ -38,7 +38,7 @@ public static class CurrentRoom
 
         Room room = isLit ? Player.Location : Objects.Get<Darkness>();
        
-        if (Player.InBoat)
+        if (Player.InVehicle)
         {
             var vehicle = Player.Parent;
             

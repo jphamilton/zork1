@@ -12,6 +12,8 @@ public class MainLoop
     
     public MainLoop(Story story)
     {
+        AppDomain.CurrentDomain.ProcessExit += (s, e) => Output.StopScripting();
+
         Console.Title = story.Title;
         Output.Initialize(Console.Out, new WordWrap(80));
         Prompt.Initialize(Console.In);
@@ -20,12 +22,7 @@ public class MainLoop
 
     public static void Run()
     {
-        var story = Context.Story;
-
-        story.Initialize();
-
-        //Frame previous = null;
-        //Frame lastAction = null;
+        Context.Story.Initialize();
 
         while (!Flags.Done)
         {
@@ -48,7 +45,7 @@ public class MainLoop
 
                 foreach (var command in commands)
                 {
-                    if (!CommandLoop(command, out error))
+                    if (!CommandRun(command, out error))
                     {
                         break;
                     }
@@ -82,7 +79,7 @@ public class MainLoop
         Console.ReadKey(true);
     }
 
-    public static bool CommandLoop(string command, out string error)
+    public static bool CommandRun(string command, out string error)
     {
         error = null;
 
@@ -99,7 +96,6 @@ public class MainLoop
             _lastAction = null;
             error = frame.Error;
             _previous = frame;
-            //break;
             return false;
         }
 
@@ -118,7 +114,6 @@ public class MainLoop
             else
             {
                 Output.Print(Messages.BegYourPardon);
-                //break;
                 return false;
             }
         }

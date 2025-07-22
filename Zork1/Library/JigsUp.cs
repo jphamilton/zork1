@@ -30,7 +30,7 @@ public class JigsUp : Dead
 
         Print(" ^   ****  You have died  **** ^^");
 
-        if (Player.InBoat)
+        if (Player.InVehicle)
         {
             player.Move(Location);
         }

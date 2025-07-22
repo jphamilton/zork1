@@ -9,7 +9,7 @@ namespace Zork1;
 
 public class Zork1GUE : Story
 {
-    public Zork1GUE()
+    public Zork1GUE() : base(new ZorkSyntax())
     {
         Name = "Zork I: The Great Underground Empire";
         Title = "Zork I";

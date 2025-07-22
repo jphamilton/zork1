@@ -37,7 +37,7 @@ public partial class Thief : Villain
         Daemon = ThiefDaemon;
 
         Before<Take>(() => Print("Once you got him, what would you do with him?"));
-        Before<TalkTo>(() => Print("The thief is a strong, silent type."));
+        Before<Tell>(() => Print("The thief is a strong, silent type."));
         Before<Listen>(() => Print("The thief says nothing, as you have not been formally introduced."));
         Before<LookIn, Examine>(() => Print("The thief is a slippery character with beady eyes that flit back and forth. " +
             "He carries, along with an unmistakable arrogance, a large bag over his shoulder and a vicious stiletto, whose " +

@@ -1,6 +1,8 @@
-﻿namespace Zork1.Handlers;
+﻿using Zork1.Library;
 
-public class TalkTo : Sub
+namespace Zork1.Handlers;
+
+public class Tell : Sub
 {
     public override bool Handler(Object noun, Object second)
     {

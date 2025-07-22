@@ -59,7 +59,7 @@ public class Leak : Object
                 return JigsUp("I'm afraid you have done drowned yourself.");
             }
 
-            if (Player.InBoat)
+            if (Player.InVehicle)
             {
                 return JigsUp("The rising water lifts the boat and carries it through the door, past the lobby, and over the falls. Tsk, tsk.");
             }

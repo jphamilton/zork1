@@ -26,7 +26,7 @@ public class Troll : Villain
         Describe = () => Description;
         bloody_axe = IsHere<BloodyAxe>();
         troll = this;
-        Before<TalkTo>(() => Print("The troll isn't much of a conversationalist."));
+        Before<Tell>(() => Print("The troll isn't much of a conversationalist."));
         Before<Examine>(() => Print(Description));
         Before<Listen>(() => Print("Every so often the troll says something, probably uncomplimentary, in his guttural tongue."));
         Before<Hello>(() =>

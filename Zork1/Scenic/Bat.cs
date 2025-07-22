@@ -31,7 +31,7 @@ public class Bat : Object
             }
         };
 
-        Before<TalkTo>(() => Fweep(6));
+        Before<Tell>(() => Fweep(6));
         Before<Poke, Attack, Take>(() => Print("You can't reach him; he's on the ceiling."));
     }
 

@@ -16,7 +16,7 @@ public static class Player
 
     public static Object Parent => Instance.Parent;
 
-    public static bool InBoat => _player.Parent != null && _player.Parent.Vehicle;
+    public static bool InVehicle => _player.Parent != null && _player.Parent.Vehicle;
 
     public static bool JigsUp(string message) => _player.JigsUp(message);
 

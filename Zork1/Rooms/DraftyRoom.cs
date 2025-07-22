@@ -10,7 +10,7 @@ public abstract class Drafty : Room
 
     protected bool EmptyHanded()
     {
-        return !Player.Children.Any(x => Query.Weight(x) > 4);
+        return !player.Children.Any(x => Query.Weight(x) > 4);
     }
 }
 

@@ -1,6 +1,4 @@
-﻿using Zork1.Handlers;
-
-namespace Zork1.Library;
+﻿namespace Zork1.Library;
 
 // Redirect from one Routine to another
 public static class Redirect

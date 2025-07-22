@@ -16,7 +16,7 @@ public class Drop : Sub
 //];
     public bool PreDrop(Object noun, Object second)
     {
-        if (noun != Player.Parent)
+        if (noun != player.Parent)
         {
             return false;
         }

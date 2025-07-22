@@ -384,6 +384,16 @@ public class LexerTests : BaseTestFixture
     }
 
     [Fact]
+    public void throw_swap()
+    {
+        Location = Get<InfiniteWhiteRoom>();
+        var lunch = Inv<Lunch>();
+        var f = GetFrame("throw lunch overboard");
+        Assert.Contains(lunch, f.Objects);
+        Assert.Contains(Get<SetOfTeeth>(), f.IndirectObjects);
+    }
+
+    [Fact]
     public void give_swap()
     {
         Location = Get<CyclopsRoom>();

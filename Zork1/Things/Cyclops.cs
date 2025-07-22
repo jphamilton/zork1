@@ -81,7 +81,7 @@ public class Cyclops : Villain
 
         // See Odysseus.cs
 
-        Before<TalkTo, Answer>(() =>
+        Before<Tell, Answer>(() =>
         {
             if (Asleep)
             {

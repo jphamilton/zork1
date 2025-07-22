@@ -25,7 +25,7 @@ public class Find : Sub
             return Print("You find it.");
         }
 
-        if (Player.Has(noun))
+        if (player.Has(noun))
         {
             return Print("You have it.");
         }

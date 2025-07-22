@@ -15,7 +15,7 @@ public class NumberOfGhosts : Object
         Name = "number of ghosts";
         Adjectives = ["ghosts", "spirit", "spirits", "fields", "force"];
 
-        Before<TalkTo, Hello>(() => Print("The spirits jeer loudly and ignore you."));
+        Before<Tell, Hello>(() => Print("The spirits jeer loudly and ignore you."));
         Before<Banish>(() => Print("Only the ceremony itself has any effect."));
         Before<Poke, Attack>(() => Print("How can you attack a spirit with material objects?"));
 

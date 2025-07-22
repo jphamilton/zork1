@@ -31,7 +31,7 @@ public static class MovePlayer
             return Player.Location;
         }
 
-        if (Player.InBoat)
+        if (Player.InVehicle)
         {
             var boat = Player.Parent;
             var onWater = boat.Parent.WaterRoom;
@@ -85,7 +85,7 @@ public static class MovePlayer
             }
             else
             {
-                var location = Player.InBoat ? Player.Parent.Name : "room";
+                var location = Player.InVehicle ? Player.Parent.Name : "room";
                 Player.JigsUp($"Oh, no! A lurking grue slithered into the {location} and devoured you!");
                 return Player.Location;
             }
@@ -125,6 +125,6 @@ public static class MovePlayer
 
         room.Visited = isLit && !room.MazeRoom;
 
-        return Player.InBoat ? (Room)Player.Parent : realRoom;
+        return Player.InVehicle ? (Room)Player.Parent : realRoom;
     }
 }

@@ -1,7 +1,6 @@
-﻿using Zork1.Library;
-using Zork1.Library.Things;
+﻿using Zork1.Library.Things;
 
-namespace Zork1.Handlers;
+namespace Zork1.Library;
 
 public abstract class DefaultSub(string Message) : Sub
 {
@@ -17,8 +16,6 @@ public abstract class Sub
 {
     protected Object player => Player.Instance;
     public Room Location => Player.Location;
-
-    public bool Global { get; protected set; }
 
     public abstract bool Handler(Object noun, Object second);
 
@@ -57,7 +54,7 @@ public abstract class Sub
         where C : Object
         where D : Object
         where E : Object => (Objects.Get<A>(), Objects.Get<B>(), Objects.Get<C>(), Objects.Get<D>(), Objects.Get<E>());
-    
+
     public bool GoTo<T>(bool showRoomDesc = true) where T : Room
     {
         return MovePlayer.To<T>(showRoomDesc);

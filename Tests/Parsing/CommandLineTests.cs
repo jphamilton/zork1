@@ -1,7 +1,7 @@
 ﻿using Zork1.Library.Parsing;
 
 namespace Tests.Parsing;
-public class CommandLineResolverTests : BaseTestFixture
+public class CommandLineTests : BaseTestFixture
 {
     [Fact]
     public void should_split_on_and_then()
@@ -34,5 +34,20 @@ public class CommandLineResolverTests : BaseTestFixture
         Assert.Equal(2, commands.Count);
         Assert.Equal("open mailbox", commands[0]);
         Assert.Equal("read leaflet", commands[1]);
+    }
+
+    [Fact]
+    public void actors_1()
+    {
+        // tell thief "drop knife"
+        var commands = CommandLine.GetCommands("tell thief \"drop knife\"");
+    }
+
+    [Fact]
+    public void actors_2()
+    {
+        // thief
+        // drop knife
+        var commands = CommandLine.GetCommands("thief, drop knife");
     }
 }

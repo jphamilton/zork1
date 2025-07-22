@@ -4,6 +4,12 @@ namespace Zork1.Library.Parsing;
 
 public static class Lexer
 {
+    // verbs that support syntax like "give cyclops food"
+    private static readonly List<string> _swap = ["give"];
+
+    // verbs that support syntax like "throw lamp overboard"
+    private static readonly List<string> _split = ["throw"];
+
     /// <summary>
     /// Lexer gonna lex
     /// </summary>
@@ -46,29 +52,10 @@ public static class Lexer
             // special handling for "go"
             // "go in" and "go out" become enter and exit
             // "go in window" becomes "enter window"
+            // "go up/down" becomes "climb up/down"
             if (frame.Verb == "go")
             {
-                if (i == tokens.Count - 1)
-                {
-                    frame.Verb = token;
-                }
-                else
-                {
-                    if (token == "in" || token == "out")
-                    {
-                        frame.Verb = token == "in" ? "enter" : "exit";
-                    }
-                    else if (token == "up" || token == "down")
-                    {
-                        frame.Verb = "climb";
-                        frame.Prep = token;
-                    }
-                    else
-                    {
-                        frame.Verb = token;
-                    }
-                }
-
+                HandleGo(frame, tokens, token, i);
                 continue;
             }
             else if (TryPreposition(frame, previous, token))
@@ -274,6 +261,30 @@ public static class Lexer
         return true;
     }
     
+    private static void HandleGo(Frame frame, List<string> tokens, string token, int i)
+    {
+        if (i == tokens.Count - 1)
+        {
+            frame.Verb = token;
+        }
+        else
+        {
+            if (token == "in" || token == "out")
+            {
+                frame.Verb = token == "in" ? "enter" : "exit";
+            }
+            else if (token == "up" || token == "down")
+            {
+                frame.Verb = "climb";
+                frame.Prep = token;
+            }
+            else
+            {
+                frame.Verb = token;
+            }
+        }
+    }
+
     private static bool TryPreposition(Frame frame, Frame previous, string token)
     {
         if (Dictionary.Prepositions.Contains(token))
@@ -314,26 +325,35 @@ public static class Lexer
             frame.UnresolvedIndirectObjects = [];
         }
 
-        // SPECIAL CASES
-        // a special case to support syntax like "give cyclops food"
-        if (frame.Verb == "give" && frame.Prep == null && frame.Objects.Count > 1)
+        // SPECIAL CASE (SWAP)
+        // syntax like "give cyclops food"
+        if (IsSwap(frame))
         {
-            frame.Prep = "to";
             var objects = frame.Objects.ToList();
             frame.IndirectObjects = [objects[0]];
             objects.RemoveAt(0);
             frame.Objects = [.. objects];
         }
 
-        // a special case to support syntax like "throw lamp overboard"
-        if (frame.Verb == "throw" && frame.Prep == null && frame.Objects.Count > 1)
+        // SPECIAL CASE (SPLIT)
+        // syntax like "throw lamp overboard"
+        if (IsSplit(frame))
         {
-            frame.Prep = "to";
             var objects = frame.Objects.ToList();
             frame.IndirectObjects = [objects[1]];
             objects.RemoveAt(1);
             frame.Objects = [.. objects];
         }
+    }
+
+    public static bool IsSwap(Frame frame)
+    {
+        return _swap.Contains(frame.Verb) && frame.Prep == null && frame.Objects.Count > 1;
+    }
+
+    public static bool IsSplit(Frame frame)
+    {
+        return _split.Contains(frame.Verb) && frame.Prep == null && frame.Objects.Count > 1;
     }
 
     private static List<Object> GetObject(string token)
