@@ -77,7 +77,7 @@ public class FightDaemon : Object
                 }
 
                 CombatOutcome blowResult = VillainBlow(villain);
-                
+
                 anyVillainAttacked = true;
 
                 if (blowResult == CombatOutcome.Knockout)
@@ -226,7 +226,7 @@ public class FightDaemon : Object
                 }
             }
         }
-        
+
         return WinnerResult(playerEffectiveStrength, result, playerBaseStrength);
     }
 

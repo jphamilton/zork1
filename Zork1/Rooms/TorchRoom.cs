@@ -15,7 +15,7 @@ public class TorchRoom : Room
     public override void Initialize()
     {
         Name = "Torch Room";
-        
+
         Describe = () =>
         {
             var desc = "This is a large room with a prominent doorway leading to a down staircase. Above you is a large dome. " +

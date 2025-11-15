@@ -1,4 +1,5 @@
-﻿namespace Zork1.Library.Parsing;
+﻿
+namespace Zork1.Library.Parsing;
 
 /// <summary>
 /// Takes input from command prompt and resolves it to
@@ -32,8 +33,7 @@ public static class CommandLine
 
             var isVerb = Dictionary.Verbs.Contains(token);
 
-            if ((i > 0 && !Dictionary.Directions.Contains(token) && (isVerb || token == "then")
-                && current.Count > 0 && (lastToken == "then" || lastToken == "and")) || (lastToken == "and" && token == "then"))
+            if (i > 0 && current.Count > 0 && isVerb && (lastToken == "then" || lastToken == "and"))
             {
                 results.Add(string.Join(' ', current));
                 current = [];

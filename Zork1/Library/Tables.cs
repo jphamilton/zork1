@@ -3,6 +3,7 @@ using Zork1.Library.Utilities;
 using Zork1.Things;
 
 namespace Zork1.Library;
+
 public static class Tables
 {
     public static PickOne<string> Door = new([
@@ -39,7 +40,7 @@ public static class Tables
     public static PickOne<string> NoSwim = new([
         "You can't swim in the dungeon."
     ]);
-   
+
     public static PickOne<string> Yuks = new([
         "A valiant attempt.",
         "You can't be serious.",

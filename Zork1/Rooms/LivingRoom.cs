@@ -102,7 +102,7 @@ public class LivingRoom : AboveGround
             {
                 Score.RemoveTrophy(Noun);
             }
-            
+
             return false;
         });
 

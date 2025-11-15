@@ -14,11 +14,11 @@ public static class Prompt
     public static string GetInput()
     {
         Output.Write($"{Environment.NewLine}> ");
-        
+
         if (_fake.Count > 0)
         {
-           _input = _fake[0];
-           _fake.RemoveAt(0);
+            _input = _fake[0];
+            _fake.RemoveAt(0);
         }
 
         var input = _input.ReadLine()?.Trim();

@@ -10,7 +10,7 @@ public class Pour : Sub
         if (noun is QuantityOfWater)
         {
             noun.Remove();
-            
+
             if (second.Flame && second.Light)
             {
                 Print($"The {second} is extinguished.");

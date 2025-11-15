@@ -1,6 +1,7 @@
 ﻿using Zork1.Library;
 
 namespace Zork1.Handlers;
+
 public class Go : Sub
 {
     // I am handling Go a little differently.

@@ -2,6 +2,7 @@
 using Zork1.Library.Things;
 
 namespace Zork1.Handlers;
+
 public class Burn : Sub
 {
     public Burn()

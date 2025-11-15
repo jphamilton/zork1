@@ -34,7 +34,7 @@ public class MaintenanceRoom : Room
     public bool TriggerLeak()
     {
         var leak = Get<Leak>();
-        
+
         leak.Concealed = false;
         leak.StartDaemon();
 

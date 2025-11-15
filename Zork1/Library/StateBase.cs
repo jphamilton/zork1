@@ -13,7 +13,7 @@ public static class Last
 public static class State
 {
     private static GameState _State => Objects.Get<GameState>();
-    
+
     public static int Deaths { get => _State.Deaths; set => _State.Deaths = value; }
     public static bool Debug { get; set; }
     public static bool Lit { get => _State.Lit; set => _State.Lit = value; }

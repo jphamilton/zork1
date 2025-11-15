@@ -2,6 +2,7 @@
 using Zork1.Library.Utilities;
 
 namespace Zork1.Melee;
+
 public class MeleeMessagePart
 {
     public string Text { get; }

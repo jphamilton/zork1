@@ -1,6 +1,5 @@
 ﻿using Zork1.Library;
 using Zork1.Library.Parsing;
-using Zork1.Library.Things;
 
 namespace Zork1.Handlers;
 
@@ -54,9 +53,9 @@ public class Insert : Sub
         noun.Move(second);
 
         noun.Visited = true;
-        
+
         Score.ScoreObject(noun);
-        
+
         return Print("Done.");
     }
 }

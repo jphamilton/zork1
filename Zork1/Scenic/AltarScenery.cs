@@ -13,6 +13,6 @@ public class AltarScenery : Supporter
     {
         Name = "altar";
         Adjectives = ["altar"];
-        
+
     }
 }

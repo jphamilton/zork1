@@ -1,6 +1,7 @@
 ﻿using Zork1.Library.Things;
 
 namespace Zork1.Library;
+
 public static class SearchList
 {
     // All will find all available objects, but containers must be open or transparent
@@ -55,7 +56,7 @@ public static class SearchList
     {
         var result = new List<Object>();
 
-        if (root ==  null)
+        if (root == null)
         {
             return result;
         }
@@ -75,7 +76,7 @@ public static class SearchList
     private static void Top(Object obj, List<Object> result, Func<Object, bool> filter = null)
     {
         TryAdd(obj, result, filter);
-        
+
         if (obj is Container c)
         {
             // changed from || !c.Open

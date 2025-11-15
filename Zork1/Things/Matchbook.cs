@@ -62,14 +62,14 @@ public class Matchbook : Object
             Flame = false;
             Light = false;
             Lit = Query.Light(Location);
-            
+
             if (!Lit)
             {
                 Print("It's pitch black in here!");
             }
 
             Clock.Queue(MatchDaemon, 0);
-            
+
             return true;
         });
 

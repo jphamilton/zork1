@@ -1,6 +1,5 @@
 ﻿using Zork1.Handlers;
 using Zork1.Library;
-using Zork1.Library.Functions;
 using Zork1.Rooms;
 
 namespace Zork1.Scenic;
@@ -34,7 +33,7 @@ public class KitchenWindow : Door
         Before<Open, Close>(() =>
         {
             Visited = true;
-            
+
             return OpenOrClose(
                 "With great effort, you open the window far enough to allow entry.",
                 "The window closes (more easily than it opened)."

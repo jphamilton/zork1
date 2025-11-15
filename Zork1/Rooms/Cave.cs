@@ -24,7 +24,7 @@ public class Cave1 : Room
         Before(() =>
         {
             var candles = Get<PairOfCandles>();
-            
+
             if (!Player.Has(candles) || !candles.Light || Random.Probability(50))
             {
                 return false;
@@ -32,11 +32,11 @@ public class Cave1 : Room
 
             candles.StopDaemon();
             candles.Light = false;
-            
+
             Print("A gust of wind blows out your candles!");
-            
+
             Lit = Query.Light();
-            
+
             if (Lit)
             {
                 return false;

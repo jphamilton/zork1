@@ -21,7 +21,7 @@ public static class Dictionary
     public static void Load()
     {
         Verbs = [];
-        
+
         Directions = [
             "north", "south", "east", "west", "northeast", "southeast", "southwest", "northwest",
             "up", "down", "in", "out"
@@ -94,7 +94,7 @@ public static class Dictionary
 
     public static void AddObject(Object obj)
     {
-        foreach(var adj in obj.Adjectives)
+        foreach (var adj in obj.Adjectives)
         {
             if (!Objects.Contains(adj))
             {

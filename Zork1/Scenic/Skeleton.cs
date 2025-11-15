@@ -29,7 +29,7 @@ public class Skeleton : Object
                 "Land of the Living Dead. The ghost leaves, muttering obscenities.");
 
             var land_of_the_dead = Get<LandOfTheDead>();
-            
+
             Rob.Run(Location, land_of_the_dead, 100);
             Rob.Run(player, land_of_the_dead);
 

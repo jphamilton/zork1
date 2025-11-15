@@ -2,6 +2,7 @@
 using Zork1.Library.Parsing;
 
 namespace Zork1.Handlers;
+
 public class Wear : Sub
 {
     public override bool Handler(Object noun, Object _)

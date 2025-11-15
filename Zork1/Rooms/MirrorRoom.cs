@@ -12,7 +12,7 @@ public abstract class MirrorRoom : Room
         {
             var desc = "You are in a large square room with tall ceilings. On the south wall is an enormous mirror " +
             "which fills the entire wall. There are exits on the other three sides of the room.";
-            
+
             if (Flags.MirrorBroken)
             {
                 desc += "^Unfortunately, the mirror has been destroyed by your recklessness.";
@@ -101,12 +101,12 @@ public abstract class Mirror : Object
             var here = Location.Items;
             var there = oppositeRoom.Items;
 
-            foreach(var obj in here)
+            foreach (var obj in here)
             {
                 obj.Move(oppositeRoom);
             }
 
-            foreach(var obj in there)
+            foreach (var obj in there)
             {
                 obj.MoveHere();
             }
@@ -136,5 +136,5 @@ public class Mirror1 : Mirror
 }
 
 public class Mirror2 : Mirror
-{  
+{
 }

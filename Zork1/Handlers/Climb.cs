@@ -1,5 +1,4 @@
 ﻿using Zork1.Library;
-using Zork1.Library.Things;
 
 namespace Zork1.Handlers;
 
@@ -40,7 +39,7 @@ public class Climb : Sub
         }
 
         var room = Location.RoomTo<T>();
-        
+
         if (room != null)
         {
             return GoTo(room);
@@ -78,7 +77,7 @@ public class ClimbOn : Sub
         {
             return Redirect.To<Board>(noun);
         }
-        
+
         return Print($"You can't climb onto the {noun}.");
     }
 }

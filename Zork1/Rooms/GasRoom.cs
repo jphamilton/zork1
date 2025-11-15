@@ -1,6 +1,5 @@
 ﻿using Zork1.Handlers;
 using Zork1.Library;
-using Zork1.Library.Things;
 using Zork1.Scenic;
 using Zork1.Things;
 
@@ -49,7 +48,7 @@ public class GasRoom : Room
             {
                 Print("Oh dear. It appears that the smell coming from this room was coal gas. I would have thought twice about carrying flaming objects in here.");
             }
-            
+
             return JigsUp("^      ** BOOOOOOOOOOOM **");
         });
     }

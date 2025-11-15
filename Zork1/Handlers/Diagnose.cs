@@ -14,7 +14,7 @@ public class Diagnose : Sub
 
         var healFunction = Get<HealFunction>();
         var healTime = Clock.Ticks(healFunction);
-        
+
         if (healTime == 0)
         {
             wounds = 0;
@@ -26,7 +26,7 @@ public class Diagnose : Sub
 
         string diagnosis = null;
 
-        switch(wounds)
+        switch (wounds)
         {
             case 0:
                 diagnosis = "You are in perfect health.";

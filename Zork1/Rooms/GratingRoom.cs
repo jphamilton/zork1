@@ -16,7 +16,7 @@ public class GratingRoom : Room
         var grating = Get<Grating>();
 
         Name = "Grating Room";
-        
+
         Describe = () =>
         {
             var desc = "You are in a small room near the maze. There are twisty passages in the immediate vicinity.^";
@@ -48,7 +48,7 @@ public class GratingRoom : Room
             }
 
             Print("The grating is closed.");
-            
+
             return this;
         });
 

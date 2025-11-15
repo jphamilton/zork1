@@ -18,7 +18,7 @@ public class ReservoirNorth : Room
         Describe = () =>
         {
             string desc = "";
-            
+
             if (Flags.LowTide && Flags.DamOpen)
             {
                 desc += "You are in a large cavernous room, the south of which was formerly a lake. " +

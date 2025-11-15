@@ -50,7 +50,7 @@ public class Leak : Object
             {
                 maintenance_room.RMUNGBIT = true;
                 maintenance_room.Description = "The room is full of water and cannot be entered.";
-                
+
                 if (!InDanger)
                 {
                     return true;

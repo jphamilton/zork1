@@ -116,7 +116,7 @@ public partial class Thief : Villain
             return false;
         });
     }
-    
+
     public bool RetreiveStiletto()
     {
         if (!Parent.Has(stiletto))
@@ -147,7 +147,7 @@ public partial class Thief : Villain
         var result = new List<Object>();
 
         var items = Children.Where(x => x is not Stiletto && x is not LargeBag).ToList();
-        
+
         foreach (var obj in items)
         {
             if (obj.TrophyValue > 0)

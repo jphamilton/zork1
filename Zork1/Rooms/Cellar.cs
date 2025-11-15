@@ -3,6 +3,7 @@ using Zork1.Library;
 using Zork1.Scenic;
 
 namespace Zork1.Rooms;
+
 public class Cellar : Room
 {
     public Cellar()
@@ -27,11 +28,11 @@ public class Cellar : Room
         });
 
         SouthTo<EastOfChasm>();
-        
+
         Before<Enter>(() =>
         {
             var trapDoor = Get<TrapDoor>();
-            
+
             if (!trapDoor.Open || trapDoor.Visited)
             {
                 return false;
@@ -39,7 +40,7 @@ public class Cellar : Room
 
             trapDoor.Open = false;
             trapDoor.Visited = true;
-            
+
             Print("The trap door crashes shut, and you hear someone barring it.");
             return false;
         });

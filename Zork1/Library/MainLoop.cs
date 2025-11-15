@@ -9,7 +9,7 @@ public class MainLoop
 {
     private static Frame _previous;
     private static Frame _lastAction;
-    
+
     public MainLoop(Story story)
     {
         AppDomain.CurrentDomain.ProcessExit += (s, e) => Output.StopScripting();

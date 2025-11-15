@@ -1,6 +1,5 @@
 ﻿using Zork1.Handlers;
 using Zork1.Library;
-using Zork1.Library.Functions;
 using Zork1.Rooms;
 using Zork1.Things;
 
@@ -73,7 +72,7 @@ public class Grating : Door
         });
 
         Before<Pick>(() => Print($"You can't pick the lock."));
-        
+
         Before<Open, Close>(() =>
         {
             if (Verb is Open && Second is SkeletonKey key)

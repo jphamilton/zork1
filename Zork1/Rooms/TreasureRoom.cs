@@ -3,6 +3,7 @@ using Zork1.Scenic;
 using Zork1.Things;
 
 namespace Zork1.Rooms;
+
 public class TreasureRoom : Room
 {
     public TreasureRoom()
@@ -49,13 +50,13 @@ public class TreasureRoom : Room
     private void ThiefInTreasure()
     {
         var treasures = Children.Where(x => !x.Concealed && x is not Thief && x is not Chalice && x.Takeable).ToList();
-        
+
         if (treasures.Count > 0)
         {
             Print("The thief gestures mysteriously, and the treasures in the room suddenly vanish.");
         }
 
-        foreach(var treasure in treasures)
+        foreach (var treasure in treasures)
         {
             treasure.Concealed = true;
         }

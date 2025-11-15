@@ -40,7 +40,7 @@ public class Studio : Room
             }
 
             Print("You can't get up there with what you're carrying.");
-            
+
             return this;
         });
 

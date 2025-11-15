@@ -3,6 +3,7 @@ using Zork1.Library.Things;
 using Zork1.Rooms;
 
 namespace Zork1.Things;
+
 public partial class Thief : Villain
 {
     public override bool OnDisarmed()
@@ -47,7 +48,7 @@ public partial class Thief : Villain
                 Print("^As the thief dies, the power of his magic decreases, and his treasures reappear:");
                 Print(Describer.DisplayList(treasures));
             }
-            
+
         }
 
         if (treasures.Count > 0)

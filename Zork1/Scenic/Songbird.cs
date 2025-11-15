@@ -1,5 +1,4 @@
 ﻿using Zork1.Handlers;
-using Zork1.Rooms;
 
 namespace Zork1.Scenic;
 
@@ -24,7 +23,7 @@ public class Songbird : Object
 
         Daemon = () =>
         {
-            if (15 <= Random.Number(1,100))
+            if (15 <= Random.Number(1, 100))
             {
                 return false;
             }

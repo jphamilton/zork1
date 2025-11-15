@@ -36,7 +36,7 @@ public class Shake : Sub
                     Empty(c);
 
                     var msg = $"The contents of the {c} spills ";
-                    
+
                     if (!Location.DryLand)
                     {
                         msg += "out and disappears.";

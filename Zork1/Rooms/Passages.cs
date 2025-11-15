@@ -1,6 +1,7 @@
 ﻿using Zork1.Library;
 
 namespace Zork1.Rooms;
+
 public class TwistingPassage : Room
 {
     public TwistingPassage()
@@ -60,7 +61,7 @@ public class ColdPassage : Room
     {
         Name = "Cold Passage";
         Description = "This is a cold and damp corridor where a long east-west passageway turns into a southward path.";
-        SouthTo <MirrorRoom1>();
+        SouthTo<MirrorRoom1>();
         WestTo<SlideRoom>();
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Zork1.Library;
 using Zork1.Library.Things;
-using Zork1.Rooms;
 using Zork1.Melee;
+using Zork1.Rooms;
 using Zork1.Scenic;
 using Zork1.Things;
 

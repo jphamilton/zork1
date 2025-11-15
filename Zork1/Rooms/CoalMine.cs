@@ -7,7 +7,7 @@ namespace Zork1.Rooms;
 
 public abstract class CoalMine : Room
 {
-    public static PickOne<Room> CoalMineRooms = new ([
+    public static PickOne<Room> CoalMineRooms = new([
         Get<Mine4>(),
         Get<Mine3>(),
         Get<Mine2>(),

@@ -87,7 +87,7 @@ public class Sword : Object
 
     private bool InfestedNextDoor()
     {
-        foreach(var room in Location.AdjoiningRooms)
+        foreach (var room in Location.AdjoiningRooms)
         {
             if (room is Door door && Infested(door.DoorTo()))
             {

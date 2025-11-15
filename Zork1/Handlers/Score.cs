@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Text;
+﻿using System.Text;
 using Zork1.Library;
 using Zork1.Rooms;
 using Zork1.Things;
@@ -56,7 +55,8 @@ public class Score : Sub
 
         var rank = "Beginner";
 
-        if (score == 350) {
+        if (score == 350)
+        {
             rank = "Master Adventurer";
         }
         else if (score > 330)
@@ -91,7 +91,7 @@ public class Score : Sub
         sb.Append($"^This score gives you the rank of {rank}.");
 
         Print(sb.ToString());
-        
+
         return true;
     }
 

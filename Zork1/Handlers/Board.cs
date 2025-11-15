@@ -1,5 +1,4 @@
 ﻿using Zork1.Library;
-using Zork1.Library.Things;
 
 namespace Zork1.Handlers;
 
@@ -13,7 +12,7 @@ public class Board : Sub
     private bool PreBoard(Object noun, Object second)
     {
         var env = player.Parent;
-        
+
         if (noun.Vehicle)
         {
             if (!Location.Has(noun))

@@ -18,7 +18,7 @@ public class DeepCanyon : Room
         Describe = () =>
         {
             var desc = "You are on the south edge of a deep canyon. Passages lead off to the east, northwest and southwest. A stairway leads down.";
-            
+
             if (Flags.DamOpen && !Flags.LowTide)
             {
                 desc += " You can hear a loud roaring sound, like that of rushing water, from below.";

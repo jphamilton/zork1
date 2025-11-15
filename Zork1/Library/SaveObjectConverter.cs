@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using System.Text.Json.Serialization;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Zork1.Library;
 
@@ -40,7 +40,7 @@ public class SaveObjectConverter : JsonConverter<SaveObject>
         SetBools(w, obj);
 
         SetNumbers(w, obj);
-        
+
         SetStrings(w, obj);
 
         SetObjects(w, obj);
@@ -69,7 +69,7 @@ public class SaveObjectConverter : JsonConverter<SaveObject>
         WriteNumbers(writer, obj);
 
         WriteStrings(writer, obj);
-        
+
         WriteObjects(writer, obj);
 
         writer.WriteEndObject();
@@ -351,6 +351,6 @@ public class SaveObjectConverter : JsonConverter<SaveObject>
                 objValues.RemoveAt(0);
             }
         }
-        
+
     }
 }

@@ -98,7 +98,7 @@ public class Spirit : Object
                 }
 
                 brass_lantern.Concealed = false;
-                
+
                 Flags.AlwaysLit = false;
                 Flags.Dead = false;
                 Player.Set(adventurer);

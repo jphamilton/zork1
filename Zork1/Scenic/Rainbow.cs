@@ -8,7 +8,7 @@ public class Rainbow : Object
 {
     public Rainbow()
     {
-        Climable= true;
+        Climable = true;
         Scenery = true;
     }
 

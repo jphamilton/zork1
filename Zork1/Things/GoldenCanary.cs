@@ -19,7 +19,7 @@ public class GoldenCanary : Object
         Adjectives = ["clockw", "gold", "golden", "canary", "treasure"];
         Initial = "There is a golden clockwork canary nestled in the egg. It has ruby eyes and a silver beak. Through a crystal window " +
             "below its left wing you can see intricate machinery inside. It appears to have wound down.";
-        
+
         Before<WindUp>(() =>
         {
             if (!Flags.SingSong && Location is SongBirdRoom)

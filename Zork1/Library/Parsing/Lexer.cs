@@ -260,7 +260,7 @@ public static class Lexer
 
         return true;
     }
-    
+
     private static void HandleGo(Frame frame, List<string> tokens, string token, int i)
     {
         if (i == tokens.Count - 1)

@@ -12,7 +12,7 @@ public class UpATree : SongBirdRoom
         base.Initialize();
 
         Name = "Up a Tree";
-        
+
         Describe = () =>
         {
             var path = Get<ForestPath>();
@@ -29,7 +29,7 @@ public class UpATree : SongBirdRoom
         };
 
         WithScenery<Tree, Forest, Songbird, WhiteHouse>();
-        
+
         var birds_nest = IsHere<BirdsNest>();
         var (jeweled_egg, broken_egg, forest_path) = Get<JeweledEgg, BrokenEgg, ForestPath>();
 

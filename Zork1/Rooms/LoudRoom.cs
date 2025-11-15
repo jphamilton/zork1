@@ -68,7 +68,7 @@ public class LoudRoom : Room
         EastTo<DampCave>();
 
         Before<Enter>(() => false);
-        
+
         Before<Echo>(DoEcho);
 
         Before(() =>

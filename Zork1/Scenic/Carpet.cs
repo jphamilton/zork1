@@ -58,7 +58,7 @@ public class Carpet : Object
         Before<ClimbOn>(() =>
         {
             var trapdoor = Get<TrapDoor>();
-            
+
             if (!Flags.RugMoved && !trapdoor.Open)
             {
                 return Print("You sit down. The rug seems to have an irregularity underneath it.");

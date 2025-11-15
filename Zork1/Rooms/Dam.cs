@@ -1,6 +1,5 @@
 ﻿using System.Text;
 using Zork1.Library;
-using Zork1.Library.Things;
 using Zork1.Scenic;
 using Zork1.Things;
 
@@ -23,7 +22,7 @@ public class Dam : Room
             StringBuilder sb = new();
             sb.Append("You are standing on the top of the Flood Control Dam #3, which was quite a tourist attraction " +
                 "in times far distant. There are paths to the north, south, and west, and a scramble down. ");
-            
+
             if (Flags.LowTide && Flags.DamOpen)
             {
                 sb.Append("You are standing on the top of the Flood Control Dam #3, which was quite a tourist attraction in times far distant. There are paths to the north, south, and west, and a scramble down.");
@@ -43,7 +42,7 @@ public class Dam : Room
             }
 
             sb.Append("^^There is a control panel here, on which a large metal bolt is mounted. Directly above the bolt is a small green plastic bubble");
-            
+
             if (Flags.Gate)
             {
                 sb.Append(" which is glowing serenely");
@@ -90,18 +89,18 @@ public class Dam : Room
                 "The roar of the water nearly deafens you, but you remain conscious as you tumble over the dam toward " +
                 "your certain doom among the rocks at its base.");
         }
-        
+
         if (Location == deep_canyon)
         {
             return Print("A sound, like that of flowing water, starts to come from below.");
         }
-        
+
         if (Location == loud_room)
         {
             Print("All of a sudden, an alarmingly loud roaring sound fills the room. Filled with fear, you scramble away.");
             return GoTo(loud_room.Nearby());
         }
-        
+
         if (Location.Is<ReservoirNorth>() || Location.Is<ReservoirSouth>())
         {
             return Print("You notice that the water level has risen to the point that it is impossible to cross.");

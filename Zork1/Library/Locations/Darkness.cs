@@ -10,7 +10,7 @@ public class Darkness : Room
         Describe = () =>
         {
             var desc = "It is pitch black.";
-            
+
             if (!Flags.GrueRepellent)
             {
                 desc += " You are likely to be eaten by a grue.";
@@ -22,6 +22,6 @@ public class Darkness : Room
 
     public override void Initialize()
     {
-        
+
     }
 }

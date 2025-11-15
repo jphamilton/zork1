@@ -15,7 +15,7 @@ public class RedHotBell : Object
         Name = "red hot brass bell";
         Description = "On the ground is a red hot bell.";
         Adjectives = ["bell", "brass", "hot", "red", "small"];
-        
+
         Before<Take>(() => Print("The bell is very hot and cannot be taken."));
 
         //https://github.com/the-infocom-files/zork1/issues/58
@@ -67,11 +67,11 @@ public class RedHotBell : Object
     public bool CoolBell()
     {
         Remove();
-        
+
         var brass_bell = Get<BrassBell>();
-        
+
         brass_bell.Move<EntranceToHades>();
-        
+
         if (Location is EntranceToHades)
         {
             return Print("The bell appears to have cooled down.");

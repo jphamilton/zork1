@@ -24,11 +24,11 @@ public class Chalice : Container
         Before<LookIn, Close, Open>(() => Print("You can't do that."));
         Before<Examine>(() => Print($"It looks pretty much like a {Name}."));
         Before<Insert>(() => Second == this && Print("You can't. I guess the chalice wasn't intended to be used that way."));
-        
+
         Before<Take>(() =>
         {
             var (thief, treasure_room) = Get<Thief, TreasureRoom>();
-            
+
             if (!treasure_room.Has(this) || !treasure_room.Has(thief) || !thief.Fight || thief.Concealed || thief.Description == Thief.ThiefOutDesc)
             {
                 return false;

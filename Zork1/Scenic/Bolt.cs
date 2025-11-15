@@ -35,27 +35,27 @@ public class Bolt : Object
             }
 
             reservoir_south.Visited = false;
-            
+
             if (Flags.DamOpen)
             {
                 Flags.DamOpen = false;
-                
+
                 loud_room.Visited = false;
                 Print("The sluice gates close and water starts to collect behind the dam.");
-                
+
                 Clock.Queue(dam.RisingWater, 8);
                 Clock.Queue(dam.LowerWater, 0);
-                
+
                 return true;
             }
 
             Flags.DamOpen = true;
 
             Print("The sluice gates open and water pours through the dam.");
-            
+
             Clock.Queue(dam.LowerWater, 8);
             Clock.Queue(dam.RisingWater, 0);
-            
+
             return true;
         });
     }

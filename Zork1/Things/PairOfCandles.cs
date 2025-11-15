@@ -32,7 +32,7 @@ public class PairOfCandles : Object
             }
 
             TimeLeft--;
-            
+
             if (Player.Has(this))
             {
                 if (TimeLeft == 20)
@@ -96,7 +96,7 @@ public class PairOfCandles : Object
 
             if (Second == null)
             {
-                
+
                 if (Player.Has(matchbook) && matchbook.Flame)
                 {
                     Print("(with the match)");
@@ -153,7 +153,7 @@ public class PairOfCandles : Object
                 On = false;
 
                 Lit = Query.Light(Location);
-                
+
                 if (!Lit)
                 {
                     return Print("It's really dark in here....");

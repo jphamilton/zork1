@@ -2,6 +2,7 @@
 using Zork1.Library.Things;
 
 namespace Zork1.Library.Parsing;
+
 public static class Snarf
 {
     private record ObjLocByte(Object Object, byte LocByte);
@@ -144,7 +145,7 @@ public static class Snarf
 
         var available = (List<Object>)[.. frame.Objects, .. frame.IndirectObjects];
         var held = SearchList.Top(Player.Instance);
-        
+
         return available.All(held.Contains);
     }
 
@@ -352,7 +353,7 @@ public static class Snarf
     private static List<Object> GetObjects(bool excludeParent = false)
     {
         var results = SearchList.Top(Player.Instance.Parent);
-        
+
         if (excludeParent)
         {
             results = [.. results.Where(x => x != Player.Instance.Parent)];

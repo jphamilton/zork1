@@ -1,5 +1,4 @@
 ﻿using Zork1.Library;
-using Zork1.Library.Things;
 
 namespace Zork1.Melee;
 
@@ -10,7 +9,7 @@ public class HealFunction : Object
         Daemon = () =>
         {
             var strength = player.Strength;
-            
+
             if (strength > 0)
             {
                 strength = 0;
@@ -34,7 +33,7 @@ public class HealFunction : Object
             }
 
             State.LoadMax = State.LoadAllowed;
-            
+
             Clock.Interrupt(this);
 
             return true;

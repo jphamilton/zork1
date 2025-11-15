@@ -12,7 +12,7 @@ public class DynamicTeeTextWriter(TextWriter console) : TextWriter
     public void StartLogging(string path)
     {
         _logFile?.Close();
-        
+
         _logFile = new StreamWriter(path, append: true)
         {
             AutoFlush = true
@@ -46,7 +46,7 @@ public class DynamicTeeTextWriter(TextWriter console) : TextWriter
 
     public override void Write(string value)
     {
-        
+
         _console.Write(value);
         _logFile?.Write(value);
     }

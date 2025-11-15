@@ -1,5 +1,4 @@
 ﻿using Zork1.Library;
-using Zork1.Library.Extensions;
 
 namespace Zork1.Handlers;
 
@@ -28,7 +27,7 @@ public class Open : Sub
             {
                 var obj = contents[0];
                 var reveal = obj.Initial;
-                
+
                 if (reveal != null)
                 {
                     SetLast.Object(obj);

@@ -1,4 +1,5 @@
 ﻿namespace Zork1.Library.Parsing;
+
 public static class SyntaxCheck
 {
     public static bool Check(Frame frame, out Grammar grammar)
@@ -10,7 +11,7 @@ public static class SyntaxCheck
         ).Distinct()];
 
         List<Grammar> preps = frame.Prep != null ? [.. verbs.Where(x => x.Verbs.Contains(frame.Prep) || x.Prepositions.Contains(frame.Prep))] : null;
-        
+
         List<Grammar> found = preps?.Count > 0 ? preps : verbs.Any(x => x.Prepositions.Count == 0) ? [.. verbs.Where(x => x.Prepositions.Count == 0)] : verbs;
 
         if (found.Count == 0)
@@ -116,7 +117,7 @@ public static class SyntaxCheck
                         frame.Error = $"What do you want to {action}?";
                         return false;
                     }
-                    
+
                     action = $"{frame.VerbToken} {frame.Prep}".Trim();
                     frame.Required = found.Min(x => x.Required);
                     frame.Error = $"What do you want to {action}?";

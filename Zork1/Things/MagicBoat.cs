@@ -23,7 +23,7 @@ public class MagicBoat : Room
         Flammable = true;
         Vehicle = true;
     }
-    
+
     public override void Initialize()
     {
         Name = "magic boat";
@@ -80,9 +80,9 @@ public class MagicBoat : Room
             if (NearWater.TryGetValue(Location, out var room))
             {
                 var river = Get<River>();
-                
+
                 GoTo(room);
-                
+
                 river.Start(room);
             }
 
@@ -134,7 +134,7 @@ public class MagicBoat : Room
         Before<Board>(() =>
         {
             var weapons = Player.Children.Any(x => x.Weapon);
-            
+
             if (weapons)
             {
                 var punctured_boat = Get<PuncturedBoat>();
@@ -154,10 +154,10 @@ public class MagicBoat : Room
         MoveHere<PileOfPlastic>();
         Rob.Run(this, Location);
         player.Move(Location);
-        
+
         Print($"It seems that the {obj} didn't agree with the boat, as evidenced by the loud hissing " +
             "noise issuing therefrom. With a pathetic sputter, the boat finishes deflating, leaving you without.");
-        
+
         if (Location.WaterRoom)
         {
             return JigsUp("In other words, fighting the fierce currents of the Frigid River. You manage to hold your " +

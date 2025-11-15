@@ -9,7 +9,7 @@ public class Command
 {
     private readonly Type _type;
     private readonly List<Object> _objects;
-    private readonly Object? _indirect;
+    private readonly Object _indirect;
     private readonly Handler _handler;
     private readonly Handler _pre;
     private readonly bool _all;

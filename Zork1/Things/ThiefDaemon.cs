@@ -22,7 +22,7 @@ public partial class Thief : Villain
             {
                 room = (Room)Parent;
             }
-            
+
             if (room != treasure_room || room == Location)
             {
                 if (room != Location || !room.Light || Location.Has<Troll>())
@@ -36,7 +36,7 @@ public partial class Thief : Villain
                     // In original game, the thief will never rob a maze room,
                     // because maze rooms are continually set to Visited = false (to confuse the player)
                     // https://github.com/the-infocom-files/zork1/issues/61
-                    
+
                     if (room.Visited)
                     {
                         Rob.Run(room, this, 75);
@@ -91,7 +91,7 @@ public partial class Thief : Villain
             room = NextRoom(room);
 
             Debug($"Thief moves to '{room.Name}'");
-            
+
             Move(room);
             Fight = false;
             Concealed = true;
@@ -132,7 +132,7 @@ public partial class Thief : Villain
 
     private void StealJunk(Room room)
     {
-        foreach(var obj in room.Children)
+        foreach (var obj in room.Children)
         {
             if (obj.TrophyValue == 0 && obj.Takeable && !obj.Sacred && !obj.Concealed && !obj.Scenery && (obj == stiletto || Random.Probability(10)))
             {
@@ -159,21 +159,21 @@ public partial class Thief : Villain
 
     private void RobMaze(Room room)
     {
-        foreach(var obj in room.Children)
+        foreach (var obj in room.Children)
         {
             if (obj.Takeable && !obj.Concealed && 40 > Random.Number(100))
             {
                 Print($"You hear, off in the distance, someone saying ~My, I wonder what this fine {obj.Name} is doing here.~");
-                
+
                 if (!Random.Probability(60))
                 {
                     return;
                 }
-                
+
                 obj.Move(this);
                 obj.Visited = true;
                 obj.Concealed = true;
-                
+
                 return;
             }
         }
@@ -183,7 +183,7 @@ public partial class Thief : Villain
     {
         var rooms = Objects.All.Where(x => x is Room && x is not Library.Door && !x.Sacred && x.DryLand).Cast<Room>().ToList();
         var index = Random.Number(0, rooms.Count);
-        
+
         index = (index == rooms.Count - 1) ? 0 : index + 1;
 
         return rooms[index];
@@ -192,9 +192,9 @@ public partial class Thief : Villain
     private void RobYouBlind()
     {
         var wasLit = Lit;
-        
+
         Lit = Query.Light();
-        
+
         if (Lit || !wasLit)
         {
             return;
@@ -207,7 +207,7 @@ public partial class Thief : Villain
     {
         var thief = this;
         var stiletto = Get<Stiletto>();
-        
+
         bool robbed = false;
         bool robbedPlayer = false;
         bool foundAnything = false;
@@ -224,9 +224,9 @@ public partial class Thief : Villain
                 if (thief.Has(stiletto))
                 {
                     thief.Concealed = false;
-                    
+
                     Flags.ThiefHere = true;
-                    
+
                     return Print("Someone carrying a large bag is casually leaning against " +
                         "one of the walls here. He does not speak, but it is clear from his " +
                         "aspect that the bag will be taken only over his dead body.");
@@ -240,9 +240,9 @@ public partial class Thief : Villain
                 stiletto.Move(thief);
                 stiletto.Scenery = true;
                 thief.Concealed = false;
-                
+
                 Flags.ThiefHere = true;
-                
+
                 return Print("You feel a light finger-touch, and turning, notice a grinning figure " +
                     "holding a large bag in one hand and a stiletto in the other.");
             }
@@ -251,9 +251,9 @@ public partial class Thief : Villain
             {
                 thief.Concealed = true;
                 thief.Fight = false;
-                
+
                 RetreiveStiletto();
-                
+
                 return Print("Your opponent, determining discretion to be the better part of valor, " +
                     "decides to terminate this little contretemps. With a rueful nod of his head, he " +
                     "steps backward into the gloom and disappears.");
@@ -267,9 +267,9 @@ public partial class Thief : Villain
             if (here && 30 > Random.Number(100))
             {
                 thief.Concealed = true;
-                
+
                 RetreiveStiletto();
-                
+
                 return Print("The holder of the large bag just left, looking disgusted. Fortunately, he took nothing.");
             }
 
@@ -295,9 +295,9 @@ public partial class Thief : Villain
                 Print("A seedy-looking individual with a large bag just wandered through the room. " +
                     "On the way through, he quietly abstracted some valuables from the room and from your " +
                     "possession, mumbling something about ~Doing unto others before...~");
-                
+
                 RobYouBlind();
-                
+
                 return false;
             }
 
@@ -339,7 +339,7 @@ public partial class Thief : Villain
         }
 
         foundAnything = Rob.Run(Location, thief, 100);
-        
+
         robbed = (foundAnything ? foundAnything : Rob.Run(player, thief));
 
         if (robbed)
@@ -353,7 +353,7 @@ public partial class Thief : Villain
         }
 
         thief.Concealed = true;
-        
+
         RetreiveStiletto();
 
         return false;

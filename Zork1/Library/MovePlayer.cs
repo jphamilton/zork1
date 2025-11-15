@@ -4,6 +4,7 @@ using Zork1.Library.Things;
 using Zork1.Things;
 
 namespace Zork1.Library;
+
 public static class MovePlayer
 {
     public static bool To<T>(bool showRoomDesc = true) where T : Room
@@ -35,7 +36,7 @@ public static class MovePlayer
         {
             var boat = Player.Parent;
             var onWater = boat.Parent.WaterRoom;
-            
+
             if (goingToDryLand && !onWater)
             {
                 // you're in a boat, but the boat is on shore

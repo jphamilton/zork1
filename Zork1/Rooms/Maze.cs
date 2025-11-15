@@ -17,7 +17,7 @@ public abstract class Maze : Room
     protected Room DownMaze()
     {
         Print("You won't be able to get back up to the tunnel you are going through when it gets to the next room.");
-        
+
         if (Location is Maze4)
         {
             return Get<Maze2>();
@@ -243,7 +243,7 @@ public class Maze5 : Maze
         IsHere<RustyKnife>();
         IsHere<BagOfCoins>();
         IsHere<BurnedOutLantern>();
-        
+
         SouthWestTo<Maze6>();
         EastTo<Maze18>();
         NorthTo<Maze3>();

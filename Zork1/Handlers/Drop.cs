@@ -2,6 +2,7 @@
 using Zork1.Library.Things;
 
 namespace Zork1.Handlers;
+
 public class Drop : Sub
 {
     public Drop()
@@ -9,11 +10,11 @@ public class Drop : Sub
         PreSub = PreDrop;
     }
 
-//[ PreDropSub ;	! 30360 / 0x7698
-//    if (noun ~= parent(player)) rfalse;
-//    Perform(##Disembark,noun);	! not popped
-//    rtrue;
-//];
+    //[ PreDropSub ;	! 30360 / 0x7698
+    //    if (noun ~= parent(player)) rfalse;
+    //    Perform(##Disembark,noun);	! not popped
+    //    rtrue;
+    //];
     public bool PreDrop(Object noun, Object second)
     {
         if (noun != player.Parent)

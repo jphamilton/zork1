@@ -1,7 +1,5 @@
-﻿using System.Diagnostics;
-using System.Text;
+﻿using System.Text;
 using Zork1.Library;
-using Zork1.Library.Things;
 using Zork1.Things;
 
 namespace Zork1.Handlers;
@@ -11,7 +9,7 @@ public class Debug : Sub
     public override bool Handler(Object noun, Object second)
     {
         State.Debug = !State.Debug;
-        
+
         if (State.Debug)
         {
             Print("Debug is on.");
@@ -23,7 +21,7 @@ public class Debug : Sub
 
         return true;
     }
-    
+
 }
 
 public abstract class DebugSub : Sub
@@ -99,7 +97,7 @@ public class GoNear : DebugSub
                 MovePlayer.To((Room)obj);
                 return true;
             }
-            
+
         }
 
         obj = GetObject(line);
@@ -154,7 +152,7 @@ public class Replay : DebugSub
                 }
 
                 MainLoop.CommandRun(command, out error);
-                
+
                 if (string.IsNullOrEmpty(fakeOutput.ToString()))
                 {
                     Console.WriteLine("no response");
@@ -170,7 +168,7 @@ public class Replay : DebugSub
                 {
                     thief.StartDaemon();
                 }
-                
+
                 if (command.StartsWith("take") && !fakeOutput.ToString().Contains("Taken."))
                 {
                     Console.WriteLine("Replay error, stopping.");
@@ -221,13 +219,13 @@ public class Replay : DebugSub
     private void Attack(string command, StringBuilder output, out string error)
     {
         error = null;
-        
+
         while (!output.ToString().Contains("the carcass has disappeared"))
         {
             output.AppendLine();
             output.AppendLine($"> {command}");
             MainLoop.CommandRun(command, out error);
         }
-        
+
     }
 }

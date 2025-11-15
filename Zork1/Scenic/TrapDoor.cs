@@ -1,6 +1,5 @@
 ﻿using Zork1.Handlers;
 using Zork1.Library;
-using Zork1.Library.Functions;
 using Zork1.Rooms;
 
 namespace Zork1.Scenic;

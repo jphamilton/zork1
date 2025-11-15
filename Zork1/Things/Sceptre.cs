@@ -33,14 +33,14 @@ public class Sceptre : Object
                 {
                     pot_of_gold.Concealed = false;
                     Print("Suddenly, the rainbow appears to become solid and, I venture, walkable (I think the giveaway was the stairs and bannister).");
-                    
+
                     if (Location is EndOfRainbow)
                     {
                         Print("^A shimmering pot of gold appears at the end of the rainbow.");
                     }
 
                     Flags.Rainbow = true;
-                    
+
                     return true;
                 }
 
@@ -55,7 +55,7 @@ public class Sceptre : Object
             if (Location == on_the_rainbow)
             {
                 Flags.Rainbow = false;
-                
+
                 return JigsUp("The structural integrity of the rainbow is severely compromised, " +
                     "leaving you hanging in mid-air, supported only by water vapor. Bye.");
             }

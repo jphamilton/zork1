@@ -2,6 +2,7 @@
 using Zork1.Library.Extensions;
 
 namespace Zork1.Library;
+
 public static class Describer
 {
     public static string Object(Supporter supporter)
@@ -19,7 +20,7 @@ public static class Describer
 
         if (contents.Count > 0)
         {
-            foreach(var item in initial)
+            foreach (var item in initial)
             {
                 results.Add(item.Initial);
                 contents.Remove(item);
@@ -29,7 +30,7 @@ public static class Describer
             {
                 List<string> list = [];
 
-                foreach(var item in contents)
+                foreach (var item in contents)
                 {
                     if (item is Container c)
                     {

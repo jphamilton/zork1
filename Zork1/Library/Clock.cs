@@ -2,6 +2,7 @@
 using System.Diagnostics;
 
 namespace Zork1.Library;
+
 public static class Clock
 {
     private static List<Object> _daemons = [];

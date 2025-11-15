@@ -15,7 +15,7 @@ public class Switch : Object
     {
         Name = "switch";
         Adjectives = ["switch"];
-        
+
         var machine = Get<Machine>();
 
         Before<SwitchOn, MoveWith>(() =>

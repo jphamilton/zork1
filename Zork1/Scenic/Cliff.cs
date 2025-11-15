@@ -19,7 +19,7 @@ public class Cliff : Wall
         const string fatal = "That would be very unwise. Perhaps even fatal.";
 
         Before<Dive>(() => Print(fatal));
-        
+
         Before<ThrowOver, Insert>(() =>
         {
             if (Noun is Me)

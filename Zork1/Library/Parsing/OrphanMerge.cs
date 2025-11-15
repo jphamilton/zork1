@@ -25,7 +25,7 @@ public static class Orphan
 
             foreach (var unresolved in previous.UnresolvedObjectTarget.ToList())
             {
-                foreach(var obj in unresolved.Objects)
+                foreach (var obj in unresolved.Objects)
                 {
                     if (!frame.Objects.Contains(obj))
                     {
@@ -39,7 +39,7 @@ public static class Orphan
                         continue;
                     }
 
-                    foreach(var pur in previous.UnresolvedObjectTarget.ToList())
+                    foreach (var pur in previous.UnresolvedObjectTarget.ToList())
                     {
                         var resolved = found.Adjectives.Contains(pur.Token) ? found : null;
                         if (resolved != null)
@@ -67,7 +67,7 @@ public static class Orphan
                 frame.IndirectObjects.AddRange(previous.IndirectObjects);
                 frame.UnresolvedObjects.AddRange(previous.UnresolvedObjects);
                 frame.UnresolvedIndirectObjects.AddRange(previous.UnresolvedIndirectObjects);
-                
+
                 if (frame.Orphan && frame.UnresolvedObjects.Count == 0 && frame.UnresolvedIndirectObjects.Count == 0)
                 {
                     // clear so that Orphan evaluates to false, because object is not found

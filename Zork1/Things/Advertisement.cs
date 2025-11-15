@@ -1,6 +1,4 @@
-﻿using Zork1.Scenic;
-
-namespace Zork1.Things;
+﻿namespace Zork1.Things;
 
 public class Advertisement : Object
 {

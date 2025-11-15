@@ -6,6 +6,7 @@ using Zork1.Scenic;
 using Zork1.Things;
 
 namespace Zork1.Library;
+
 public class JigsUp : Dead
 {
     public string DeathMessage { get; set; }
@@ -55,7 +56,7 @@ public class JigsUp : Dead
             Print("As you take your last breath, you feel relieved of your burdens. The feeling passes as you " +
                 "find yourself before the gates of Hell, where the spirits jeer at you and deny you entry. Your " +
                 "senses are disturbed. The objects in the dungeon appear indistinct, bleached of color, even unreal.");
-            
+
             Flags.Dead = true;
             Flags.Troll = true;
             Flags.AlwaysLit = true;
@@ -72,9 +73,9 @@ public class JigsUp : Dead
         trap_door.Visited = false;
 
         RandomizeObjects();
-        
+
         KillInterrupts();
-        
+
         return true;
     }
 
@@ -105,7 +106,7 @@ public class JigsUp : Dead
 
         var dark_rooms = new PickOne<Object>([.. Objects.All.Where(x => x is Room && x.DryLand && !x.Light)]);
         var above_ground = new PickOne<Object>([.. Objects.All.Where(x => x is Room && x is AboveGround)]);
-        
+
         foreach (var obj in Player.Children)
         {
             if (obj.TrophyValue > 0)

@@ -1,5 +1,4 @@
 ﻿using Zork1.Library;
-using Zork1.Library.Things;
 using Zork1.Scenic;
 
 namespace Zork1.Rooms;

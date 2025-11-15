@@ -9,7 +9,7 @@ public class SandyBeach : Room
     public SandyBeach()
     {
         DryLand = true;
-        Sacred= true;
+        Sacred = true;
     }
 
     public override void Initialize()

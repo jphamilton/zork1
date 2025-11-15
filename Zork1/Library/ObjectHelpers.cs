@@ -15,7 +15,7 @@ public abstract partial class Object
     public static Sub Verb => Context.Verb;
     public static Room Location => Player.Location;
     protected static Object player => Player.Instance;
-    
+
     protected static bool Lit
     {
         get
@@ -43,7 +43,7 @@ public abstract partial class Object
     {
         throw new DeathException(message);
     }
-    
+
     #region Before Action Helpers
 
     // generic before routine that captures any command

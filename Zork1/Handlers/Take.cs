@@ -40,7 +40,7 @@ public class Take : Sub
             {
                 return Print($"The {noun} isn't in the {second}.");
             }
-            
+
             return false;
         }
 

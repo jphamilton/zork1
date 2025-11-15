@@ -13,7 +13,7 @@ public class Quit : Sub
     public static bool Run(bool askFirst = true)
     {
         Score.PrintScore(askFirst);
-        Console.Write("^Do you wish to leave the game? (Y is affirmative): ");
+        Console.Write($"{Environment.NewLine}Do you wish to leave the game? (Y is affirmative): ");
         var response = Console.ReadLine()?.ToLower();
         if (response != "yes" && response != "y")
         {

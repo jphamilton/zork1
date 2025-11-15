@@ -37,11 +37,11 @@ public static class CurrentRoom
         bool isLit = lit || IsLit();
 
         Room room = isLit ? Player.Location : Objects.Get<Darkness>();
-       
+
         if (Player.InVehicle)
         {
             var vehicle = Player.Parent;
-            
+
             if (isLit)
             {
                 Output.Bold($"{room.Name} (in a {vehicle})");
@@ -158,13 +158,13 @@ public static class CurrentRoom
                 // not displaying (which is empty)
                 output.Add($"There is a {c} here.");
             }
-            
+
             return;
         }
 
         var contents = c.Items;
 
-        foreach(var item in contents.Where(x => x.ShowInitial || x.Describe != null).ToList())
+        foreach (var item in contents.Where(x => x.ShowInitial || x.Describe != null).ToList())
         {
             initial = GetInitialOrDescribe(item);
             if (initial != null)
@@ -184,7 +184,7 @@ public static class CurrentRoom
 
             var combined = string.Concat(descriptions);
             var sentences = combined.Split('.').Where(x => !string.IsNullOrEmpty(x)).ToList();
-            combined =  string.Join(". ", sentences.Select(x => x.Trim()));
+            combined = string.Join(". ", sentences.Select(x => x.Trim()));
             output.Add($"{combined}.");
         }
         else
@@ -236,17 +236,12 @@ public static class CurrentRoom
             output.Add(obj.Description);
             return true;
         }
-        
+
         return false;
     }
 
     private static bool TrySkipScenery(Object obj)
     {
-        if (obj.Scenery && obj.Describe == null)
-        {
-            return true;
-        }
-
-        return false;
+        return obj.Scenery && obj.Describe == null;
     }
 }

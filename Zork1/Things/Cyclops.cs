@@ -170,7 +170,7 @@ public class Cyclops : Villain
 
             Asleep = false;
             Fight = true;
-            
+
             StartDaemon();
 
             // set cyclops to "has not eaten hot peppers" state

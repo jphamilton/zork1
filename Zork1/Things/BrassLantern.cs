@@ -22,7 +22,7 @@ public class BrassLantern : Object
         Adjectives = ["lamp", "lantern", "light", "brass"];
         Description = "There is a brass lantern (battery-powered) here.";
         Initial = "A battery-powered brass lantern is on the trophy case.";
-        
+
         Before<Throw>(() =>
         {
             Print("The lamp has smashed into the floor, and the light has gone out.");
@@ -88,17 +88,17 @@ public class BrassLantern : Object
                     Print("The lamp appears a bit dimmer.");
                 }
 
-                if ( TimeLeft == 70 )
+                if (TimeLeft == 70)
                 {
                     Print("The lamp is definitely dimmer now.");
                 }
 
-                if ( TimeLeft == 15 )
+                if (TimeLeft == 15)
                 {
                     Print("The lamp is nearly out.");
                 }
 
-                if ( TimeLeft == 0 )
+                if (TimeLeft == 0)
                 {
                     Print("You'd better have more light than from the brass lantern.");
                 }

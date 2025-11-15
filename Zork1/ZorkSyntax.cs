@@ -3,6 +3,7 @@ using Zork1.Library;
 using Zork1.Library.Parsing;
 
 namespace Zork1;
+
 public class ZorkSyntax : SyntaxBase
 {
     public override SyntaxDefinitons Load()

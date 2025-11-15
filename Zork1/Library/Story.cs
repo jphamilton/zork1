@@ -23,7 +23,7 @@ public abstract class Story
         Routines.Load();
 
         Objects.Load();
-        
+
         // initialize rooms first
         foreach (var obj in Objects.All.Where(x => x is Room))
         {

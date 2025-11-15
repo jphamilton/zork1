@@ -1,7 +1,7 @@
-using Zork1.Library.Things;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 using Zork1.Handlers;
+using Zork1.Library.Things;
 
 namespace Zork1.Library;
 
@@ -17,7 +17,7 @@ public abstract class Room : Object
     {
         if (CanGo<T>())
         {
-            var roomer =  _roomMap[typeof(T)];
+            var roomer = _roomMap[typeof(T)];
             return roomer();
         }
 
@@ -220,7 +220,7 @@ public abstract class Room : Object
         if (!_roomMap.ContainsKey(type) && !TryFindDoor(type, out door))
         {
             var before = GetBeforeRoutine(type);
-            
+
             if (before != null && before())
             {
                 return null;

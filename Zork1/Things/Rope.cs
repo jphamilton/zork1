@@ -43,7 +43,7 @@ public class Rope : Object
             }
 
             Print("The rope drops over the side and comes within ten feet of the floor.");
-            
+
             Flags.Dome = true;
             Scenery = true;
 

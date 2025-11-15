@@ -5,6 +5,7 @@ using Zork1.Library.Things;
 using Zork1.Things;
 
 namespace Zork1.Library.Parsing;
+
 public static class TakeCheck
 {
     public static bool Check(Frame frame)

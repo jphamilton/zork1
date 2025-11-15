@@ -11,9 +11,9 @@ public class PseudoChasm : Object
     {
         Name = "chasm";
         Adjectives = ["chasm"];
-        
+
         Before<Dive>(() => Print(ForOnce));
-        
+
         Before<Insert, ThrowOver>(() =>
         {
             if (Noun is Me)

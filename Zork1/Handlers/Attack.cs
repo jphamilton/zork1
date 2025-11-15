@@ -1,9 +1,7 @@
-﻿using System.Text;
+﻿using Zork1.Library;
 using Zork1.Library.Things;
-using Zork1.Rooms;
 using Zork1.Melee;
 using Zork1.Things;
-using Zork1.Library;
 
 namespace Zork1.Handlers;
 
@@ -32,7 +30,7 @@ public class Attack : Combat
         }
 
         HeroBlow(noun, second);
-        
+
         return true;
     }
 }
@@ -126,7 +124,7 @@ public abstract class Combat : Sub
             // Inform: Remark(PickOne(Hero_melee-->(res)),noun,second);
             // noun is villain, second is hero's weapon.
             var heroMessage = MeleeDefinitions.HeroMelee.AttackTypes[(int)result - 1].Messages.Pick();
-            
+
             MeleeRoutine.Remark(heroMessage, second, villain);
         }
 

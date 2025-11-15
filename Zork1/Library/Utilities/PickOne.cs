@@ -1,4 +1,5 @@
 ﻿namespace Zork1.Library.Utilities;
+
 public class PickOne<T>(List<T> messages)
 {
     private List<T> _picked = [];
@@ -22,5 +23,5 @@ public class PickOne<T>(List<T> messages)
     }
 
     // for testing
-    public List<T> List => [.. _picked,.. _unpicked];
+    public List<T> List => [.. _picked, .. _unpicked];
 }

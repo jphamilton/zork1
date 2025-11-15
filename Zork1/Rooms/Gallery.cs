@@ -2,6 +2,7 @@
 using Zork1.Things;
 
 namespace Zork1.Rooms;
+
 public class Gallery : Room
 {
     public Gallery()

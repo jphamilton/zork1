@@ -1,6 +1,4 @@
-﻿using Zork1.Rooms;
-
-namespace Zork1.Scenic;
+﻿namespace Zork1.Scenic;
 
 public class Tree : Object
 {

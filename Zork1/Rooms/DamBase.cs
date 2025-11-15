@@ -3,6 +3,7 @@ using Zork1.Scenic;
 using Zork1.Things;
 
 namespace Zork1.Rooms;
+
 public class DamBase : Room
 {
     public DamBase()

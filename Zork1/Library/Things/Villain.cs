@@ -2,10 +2,11 @@
 using Zork1.Things;
 
 namespace Zork1.Library.Things;
+
 public abstract class Villain : Object
 {
     public VillainDefinitionEntry Definition => MeleeDefinitions.VillainDefinitions.Single(x => x.Villain == this);
-    
+
     public bool FightAction(CombatFlags flags)
     {
         switch (flags)
@@ -83,7 +84,7 @@ public abstract class Villain : Object
         if (playerEffectiveStrength > 0) { return Random.Between(1, 100) <= 75; }
         if (playerEffectiveStrength == 0) { return Random.Between(1, 100) <= 50; }
         if (villainStrength > 1) { return Random.Between(1, 100) <= 25; }
-        
+
         return Random.Between(1, 100) <= 10;
     }
 

@@ -13,7 +13,7 @@ public class ThrowTo : Sub
         {
             // https://github.com/the-infocom-files/zork1/issues/50
             var env = Player.Parent;
-            
+
             if (env.Vehicle)
             {
                 // added check for buoy which should float, but everything

@@ -47,7 +47,7 @@ public class Close : Sub
             noun.Open = false;
             return Print($"The {noun} is now closed.");
         }
-        
+
         return Print("You cannot close that.");
     }
 }

@@ -12,7 +12,7 @@ public abstract partial class Object
     public List<string> Adjectives { get; set; } = [];
 
     public abstract void Initialize();
-    
+
     /// <summary>
     /// Normal every day object description
     /// </summary>

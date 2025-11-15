@@ -11,7 +11,7 @@ public class Odysseus : Sub
         var cyclops = Get<Cyclops>();
         var cyclopsRoom = Get<CyclopsRoom>();
 
-        if (Location == cyclopsRoom && cyclops.Parent == cyclopsRoom  && !cyclops.Asleep)
+        if (Location == cyclopsRoom && cyclops.Parent == cyclopsRoom && !cyclops.Asleep)
         {
             cyclops.Asleep = true;
             cyclops.Fled = true;

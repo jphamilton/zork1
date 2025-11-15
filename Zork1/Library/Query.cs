@@ -2,6 +2,7 @@
 using Zork1.Things;
 
 namespace Zork1.Library;
+
 public static class Query
 {
     public static bool Light(Object root = null)
